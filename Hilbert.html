@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"], input[type="number"] {
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    p {
+      margin-top: 20px;
+    }
+  </style>
+  <title>Macto - Hilbert</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Hilbert Math Solver</h1>
+    <form id="mathForm">
+      <input type="text" id="problem" placeholder="Enter your math problem here" required>
+      <input type="submit" value="Solve">
+    </form>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    const mathForm = document.getElementById('mathForm');
+    mathForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const problem = document.getElementById('problem').value;
+      const result = eval(problem);
+      document.getElementById('result').textContent = `Result: ${result}`;
+    });
+  </script>
+</body>
+<address>George Cané</address>
+<body>
+  <h2>See George Cané on GitHub</h2>
+  <a href="https://github.com/Georgecane">GitHub</a>
+  <h3>See Other George Projects</h3>
+  <a href="https://georgecane.github.io/macto.github.io/">Macto Text Editor</a>
+</body>
+</html>
