@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Text Editor</title>
+  <title>Macto Text Editor</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -23,7 +23,7 @@
 </head>
 <body>
 
-<h1>Text Editor</h1>
+<h1>Macto Text Editor</h1>
 
 <textarea id="textArea"></textarea>
 
@@ -31,21 +31,18 @@
 
 <script>
 function saveText() {
-  var text = document.getElementById('textArea').value;
+  var text = document.getElementById("textArea").value;
   
-  var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-  
-  var url = URL.createObjectURL(blob);
-  
-  var a = document.createElement('a');
-  
-  a.href = url;
-  
-  a.download = 'textFile.txt';
-  
-  document.body.appendChild(a);
-  
-  a.click();
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', 'textFile.txt');
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
 }
 </script>
 
