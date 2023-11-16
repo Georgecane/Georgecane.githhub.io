@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Macto</title>
+</head>
+<body>
+
+<h1>Python Code Execution</h1>
+
+<textarea id="pythonCode">
+# Write your Python code here
+print("Hello, World!")
+</textarea>
+
+<button onclick="runPythonCode()">Run Code</button>
+
+<script>
+  function runPythonCode() {
+    var code = document.getElementById("pythonCode").value;
+    try {
+      eval(code); // This is not secure to use
+    } catch (error) {
+      alert("An error occurred while running the Python code: " + error);
+    }
+  }
+</script>
+
+</body>
+</html>
